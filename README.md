@@ -21,10 +21,12 @@ H2 in memory database is used to store the currency exchange data.
 | `from` | `string` | **Required**. Currency letter symbol |
 | `to` | `string` | **Required**. Currency letter symbol |
 
-Currently supported currencies are USD, INR, EUR, AUD
+_Currently supported currencies are USD, INR, EUR, AUD_
 
 
 ## Lessons Learned
 
-How to setup a spring boot application, controller, reposotory interface. How to set the application.property for h2 database and console. How to load data to H2 using data.sql.
+- How to setup a spring boot application, controller, reposotory interface. 
+- How to set the application.property for h2 database and console. 
+- How to load data to H2 using data.sql.
 
