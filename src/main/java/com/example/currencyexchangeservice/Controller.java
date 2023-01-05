@@ -14,10 +14,16 @@ public class Controller {
     @Autowired
     Environment env;
 
+    @Autowired
+    CurrencyExchangeRepository repository;
+
     @GetMapping("/currency-exchange/from/{from}/to/{to}")
     public CurrencyExchange retrieve(@PathVariable String from, @PathVariable String to) {
         String envHost = env.getProperty("local.server.port");
-        CurrencyExchange currencyExchange = new CurrencyExchange(1000L, from, to, BigDecimal.valueOf(65L));
+        CurrencyExchange currencyExchange = repository.findByFromAndTo(from, to);
+        if(currencyExchange==null) {
+            return new CurrencyExchange();
+        }
         currencyExchange.setEnvironment(envHost);
         return currencyExchange;
     }
